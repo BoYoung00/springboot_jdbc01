@@ -14,12 +14,12 @@ public class CourseJpaRepository {
         entityManager.merge(course);
     }
 
-    public void delect(long id) {
+    public void deleteById(long id) {
         Course course = entityManager.find(Course.class, id);
         entityManager.remove(course);
     }
 
-    public Course select(long id) {
+    public Course findById(long id) {
         return entityManager.find(Course.class, id);
     }
 }

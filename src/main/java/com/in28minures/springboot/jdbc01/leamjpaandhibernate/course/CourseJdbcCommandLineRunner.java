@@ -21,11 +21,18 @@ public class CourseJdbcCommandLineRunner implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         repository.save(new Course(1, "Learn AWS Now", "in28"));
-        repository.save(new Course(2, "Learn AWS Now", "in28"));
+        repository.save(new Course(2, "Learn AWS b", "in27"));
+        repository.save(new Course(3, "Learn AWS a", "in28"));
 
-        repository.delect(1l);
+        repository.deleteById(1l);
 
-        System.out.println(repository.select(2l));
+        System.out.println(repository.findById(2l));
+
+        System.out.println(repository.findAll());
+        System.out.println(repository.count());
+
+        System.out.println(repository.findByAuthor("in28"));
+        System.out.println(repository.findByName("Learn AWS b"));
 
 
     }
